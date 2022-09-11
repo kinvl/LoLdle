@@ -1,0 +1,103 @@
+/* 
+  Localizable.strings
+  LoLdle
+
+  Created by Krzysztof Kinal on 08/10/2022.
+  
+*/
+
+// MARK: - Main
+"challenge_button_champion_title" = "Champion";
+"challenge_button_quote_title" = "Quote (coming soon)";
+"challenge_button_ability_title" = "Ability (coming soon)";
+"challenge_button_splash_title" = "Splash (coming soon)";
+
+// MARK: - Challenge
+"answer_textfield_placeholder" = "Champion name";
+"answer_button_title" = "Answer";
+"winner_congratulations" = "Congratulations!";
+"winner_number_of_guesses" = "You guessed the correct champion in %@ tries! 🏆";
+"winner_first_try" = "You guessed the correct champion on the first try! 🏆";
+
+// MARK: - Errors
+"error_common_unknown" = "An unknown error occured.";
+"error_network_common" = "Unable to make a network request.\nCheck your internet connection.";
+"error_network_download" = "An error occurred while downloading the required files.\nCheck your internet connection.";
+"error_database_common" = "A database access error has occurred.\nTry relaunching the app.";
+"error_files_common" = "Unable to read files from a drive.\nTry relaunching the app.";
+
+// MARK: - Champion
+"champion_gender_male" = "Male";
+"champion_gender_female" = "Female";
+"champion_gender_other" = "Other";
+
+"champion_position_top" = "Top";
+"champion_position_jungle" = "Jungle";
+"champion_position_middle" = "Middle";
+"champion_position_bottom" = "Bottom";
+"champion_position_support" = "Support";
+
+"champion_species_human" = "Human";
+"champion_species_yordle" = "Yordle";
+"champion_species_golem" = "Golem";
+"champion_species_darkin" = "Darkin";
+"champion_species_godWarrior" = "God-Warrior";
+"champion_species_aspect" = "Aspect";
+"champion_species_vastayan" = "Vastayan";
+"champion_species_minotaur" = "Minotaur";
+"champion_species_celestial" = "Celestial";
+"champion_species_magicallyAltered" = "Magically Altered";
+"champion_species_iceborn" = "Iceborn";
+"champion_species_cyborg" = "Cyborg";
+"champion_species_voidBeing" = "Voidborn";
+"champion_species_spirit" = "Spirit";
+"champion_species_chemicallyAltered" = "Chemically Altered";
+"champion_species_demon" = "Demon";
+"champion_species_magicborn" = "Magicborn";
+"champion_species_undead" = "Undead";
+"champion_species_spiritualist" = "Spiritualist";
+"champion_species_god" = "God";
+"champion_species_unknown" = "Unknown";
+"champion_species_revenant" = "Revenant";
+"champion_species_dragon" = "Dragon";
+"champion_species_brackern" = "Brackern";
+"champion_species_troll" = "Troll";
+"champion_species_rat" = "Rat";
+"champion_species_cat" = "Cat";
+
+"champion_resource_mana" = "Mana";
+"champion_resource_energy" = "Energy";
+"champion_resource_manaless" = "Manaless";
+"champion_resource_bloodthirst" = "Bloodthirst";
+"champion_resource_health" = "Health";
+"champion_resource_fury" = "Fury";
+"champion_resource_grit" = "Grit";
+"champion_resource_heat" = "Heat";
+"champion_resource_ferocity" = "Ferocity";
+"champion_resource_rage" = "Rage";
+"champion_resource_shield" = "Shield";
+"champion_resource_courage" = "Courage";
+"champion_resource_flow" = "Flow";
+
+"champion_rangeType_melee" = "Melee";
+"champion_rangeType_ranged" = "Ranged";
+
+"champion_region_demacia" = "Demacia";
+"champion_region_noxus" = "Noxus";
+"champion_region_ionia" = "Ionia";
+"champion_region_shurima" = "Shurima";
+"champion_region_zaun" = "Zaun";
+"champion_region_targon" = "Targon";
+"champion_region_runeterra" = "Runeterra";
+"champion_region_freljord" = "Freljord";
+"champion_region_blessedIsles" = "Blessed Isles";
+"champion_region_camavor" = "Camavor";
+"champion_region_shadowIsles" = "Shadow Isles";
+"champion_region_piltover" = "Piltover";
+"champion_region_bandleCity" = "Bandle City";
+"champion_region_void" = "The Void";
+"champion_region_ixtal" = "Ixtal";
+"champion_region_icathia" = "Icathia";
+"champion_region_bilgewater" = "Bilgewater";
+"champion_region_rhaast" = "Rhaast";
+"champion_region_kathkan" = "Kathkan";

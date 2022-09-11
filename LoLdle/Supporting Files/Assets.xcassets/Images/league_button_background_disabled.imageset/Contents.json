@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "league_button_background_disabled.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
