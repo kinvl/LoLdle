@@ -32,6 +32,10 @@ enum LoLdleError: Error {
         }
     }
     
+    var code: Int {
+        (self as NSError).code
+    }
+    
     init(error: Error?) {
         guard let error = error else {
             self = .unknown

@@ -70,6 +70,7 @@ class BaseViewController<T: UIView>: UIViewController {
     
     func presentErrorView(error: LoLdleError) {
         guard errorView.superview == nil else { return }
+        Analytics.shared.trackErrorViewed(errorDescription: error.description, errorCode: error.code)
         dismissKeyboard()
         
         errorView.configure(withError: error)
