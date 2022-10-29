@@ -10,6 +10,9 @@
 		1309E02C28F20A10004DC9C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1309E02E28F20A10004DC9C1 /* Localizable.strings */; };
 		1309E03128F21695004DC9C1 /* Titleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1309E03028F21695004DC9C1 /* Titleable.swift */; };
 		1309E03328F2184B004DC9C1 /* Int+Titleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1309E03228F2184B004DC9C1 /* Int+Titleable.swift */; };
+		13154958290D5D5800CC5A9D /* Amplitude in Frameworks */ = {isa = PBXBuildFile; productRef = 13154957290D5D5800CC5A9D /* Amplitude */; };
+		1315495B290D631100CC5A9D /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1315495A290D631100CC5A9D /* Analytics.swift */; };
+		1315495E290D639A00CC5A9D /* AmplitudeEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1315495D290D639A00CC5A9D /* AmplitudeEvents.swift */; };
 		13258EE428CA74F900828846 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13258EE328CA74F900828846 /* MainViewModel.swift */; };
 		13258EE628CA758600828846 /* GetLocalDataCountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13258EE528CA758600828846 /* GetLocalDataCountUseCase.swift */; };
 		13258EFA28CA879600828846 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13258EF928CA879600828846 /* Network.swift */; };
@@ -122,6 +125,8 @@
 		1309E02D28F20A10004DC9C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1309E03028F21695004DC9C1 /* Titleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titleable.swift; sourceTree = "<group>"; };
 		1309E03228F2184B004DC9C1 /* Int+Titleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Titleable.swift"; sourceTree = "<group>"; };
+		1315495A290D631100CC5A9D /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		1315495D290D639A00CC5A9D /* AmplitudeEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeEvents.swift; sourceTree = "<group>"; };
 		13258EE328CA74F900828846 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		13258EE528CA758600828846 /* GetLocalDataCountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalDataCountUseCase.swift; sourceTree = "<group>"; };
 		13258EF928CA879600828846 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -208,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13154958290D5D5800CC5A9D /* Amplitude in Frameworks */,
 				13B4E40128CD2B4400F7F791 /* RxRelay in Frameworks */,
 				135B0B8B28D0AC4100BB83A6 /* SnapKit in Frameworks */,
 				139A3B1C28DB7CC500F01B23 /* KeyboardLayoutGuide in Frameworks */,
@@ -258,6 +264,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1315495C290D638D00CC5A9D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				1315495A290D631100CC5A9D /* Analytics.swift */,
+				1315495D290D639A00CC5A9D /* AmplitudeEvents.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		13258EF828CA870800828846 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +301,7 @@
 		1340CA9A28C14EB200BA0B01 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1315495C290D638D00CC5A9D /* Analytics */,
 				13EC00FF28CF947D001D3CFC /* BaseViewController.swift */,
 				1340CA9B28C14EC100BA0B01 /* DirectoryURLProvider.swift */,
 			);
@@ -615,6 +631,7 @@
 				139A3B1B28DB7CC500F01B23 /* KeyboardLayoutGuide */,
 				139A3B2528DB86AD00F01B23 /* AutocompleteField */,
 				13E909D828FAC5FB006C951C /* Lottie */,
+				13154957290D5D5800CC5A9D /* Amplitude */,
 			);
 			productName = LoLdle;
 			productReference = 13B6076628AD0C81004D6CC1 /* LoLdle.app */;
@@ -696,6 +713,7 @@
 				139A3B1A28DB7CC500F01B23 /* XCRemoteSwiftPackageReference "KeyboardLayoutGuide" */,
 				139A3B2428DB86AD00F01B23 /* XCRemoteSwiftPackageReference "AutocompleteField" */,
 				13E909D728FAC5FB006C951C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				13154956290D5D5700CC5A9D /* XCRemoteSwiftPackageReference "Amplitude-iOS" */,
 			);
 			productRefGroup = 13B6076728AD0C81004D6CC1 /* Products */;
 			projectDirPath = "";
@@ -782,6 +800,7 @@
 				1309E03128F21695004DC9C1 /* Titleable.swift in Sources */,
 				13258F0828CA8DF600828846 /* StorageAssembly.swift in Sources */,
 				13EC010028CF947D001D3CFC /* BaseViewController.swift in Sources */,
+				1315495B290D631100CC5A9D /* Analytics.swift in Sources */,
 				13B607A328AD0E0E004D6CC1 /* Resource.swift in Sources */,
 				138B4C1028FC985800EBFE44 /* UseCaseAssembly.swift in Sources */,
 				1340CA9C28C14EC100BA0B01 /* DirectoryURLProvider.swift in Sources */,
@@ -820,6 +839,7 @@
 				135A9D57290AFE8C00A08C5C /* Spacing.swift in Sources */,
 				13E909DF28FB222C006C951C /* Collection.swift in Sources */,
 				13EC00FE28CF79AE001D3CFC /* LoLdleError.swift in Sources */,
+				1315495E290D639A00CC5A9D /* AmplitudeEvents.swift in Sources */,
 				13A9A00728CB37A0006C3684 /* MainRouter.swift in Sources */,
 				13D6FC2B28CA3624007B0668 /* UserDefaultsStorage.swift in Sources */,
 				13258F0628CA8DE800828846 /* Assembler.swift in Sources */,
@@ -946,6 +966,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-l\"sqlite3\"";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1000,6 +1021,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-l\"sqlite3\"";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1012,6 +1034,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5238GJ38UR;
@@ -1028,9 +1051,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvl.LoLdle;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kinvl.LoLdle-Debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1042,6 +1066,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5238GJ38UR;
@@ -1058,9 +1083,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinvl.LoLdle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1185,6 +1211,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		13154956290D5D5700CC5A9D /* XCRemoteSwiftPackageReference "Amplitude-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/amplitude/Amplitude-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		135B0B8928D0AC4100BB83A6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1252,6 +1286,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		13154957290D5D5800CC5A9D /* Amplitude */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13154956290D5D5700CC5A9D /* XCRemoteSwiftPackageReference "Amplitude-iOS" */;
+			productName = Amplitude;
+		};
 		135B0B8A28D0AC4100BB83A6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 135B0B8928D0AC4100BB83A6 /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = Assembler.assembler.resolver.resolve(UIWindow.self)!
         window?.makeKeyAndVisible()
+        
+        Analytics.shared.setup()
+        
         return true
     }
 }

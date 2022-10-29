@@ -77,6 +77,7 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
     private func checkAnswer(_ championName: String) {
         viewModel.checkAnswer(championName)
             .subscribe { [weak self] isCorrect in
+                Analytics.shared.trackAnswerChecked(answerCorrect: isCorrect)
                 guard let self = self else { return }
                 self.castView.reloadTableView()
                 if isCorrect {

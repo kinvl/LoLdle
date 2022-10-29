@@ -41,6 +41,7 @@ class MainViewController: BaseViewController<MainView> {
     private func setupRx() {
         disposeBag.insert([
             castView.championChallengeButton.rx.tap.bind { [weak self] _ in
+                Analytics.shared.trackChampionChallengeTapped()
                 self?.router.presentChampionChallenge(from: self?.navigationController)
             }
         ])
@@ -58,5 +59,3 @@ class MainViewController: BaseViewController<MainView> {
             }.disposed(by: disposeBag)
     }
 }
-
-
