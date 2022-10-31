@@ -27,7 +27,9 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         castView.setup(withNavigationBar: navigationController?.navigationBar)
-        prepare()
+        viewModel.isTodaysAlreadyChallengeCompleted
+            ? presentWinnerView()
+            : prepare()
         setupNavigationBarItems()
         setupRx()
         
@@ -66,8 +68,7 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
             .observe(on: MainScheduler.instance)
             .subscribe { [weak self] suggestions in
                 self?.stopIndicatingProgress()
-                guard let self = self else { return }
-                self.castView.configureWith(suggestions: suggestions)
+                self?.castView.configureWith(suggestions: suggestions)
             } onFailure: { [weak self] error in
                 self?.stopIndicatingProgress()
                 self?.presentErrorView(error: LoLdleError(error: error))
@@ -75,18 +76,19 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
     }
     
     private func checkAnswer(_ championName: String) {
-        viewModel.checkAnswer(championName)
-            .subscribe { [weak self] isCorrect in
-                Analytics.shared.trackAnswerChecked(answerCorrect: isCorrect)
-                guard let self = self else { return }
-                self.castView.reloadTableView()
-                if isCorrect {
-                    self.dismissKeyboard()
-                    self.castView.addWinnerView(numberOfGuesses: self.viewModel.guesses.count, championItemModel: self.viewModel.guesses.first)
-                }
-            } onFailure: { [weak self] error in
-                self?.presentErrorView(error: LoLdleError(error: error))
-            }.disposed(by: disposeBag)
+        let isCorrect = viewModel.isAnswerCorrect(championName)
+        Analytics.shared.trackAnswerChecked(answerCorrect: isCorrect)
+        castView.reloadTableView()
+        if isCorrect {
+            presentWinnerView()
+        }
+    }
+    
+    private func presentWinnerView() {
+        self.dismissKeyboard()
+        if let completedChallengeInfo = viewModel.completedChallengeInfo {
+            castView.addWinnerView(info: completedChallengeInfo)
+        }
     }
     
     // MARK: - UITableViewDataSource
