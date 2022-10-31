@@ -25,4 +25,17 @@ enum ChallengeType: String, Codable {
             return "splash/"
         }
     }
+    
+    var userDefaultsKey: String {
+        switch self {
+        case .champion:
+            return "Champion"
+        case .quote:
+            return "Quote"
+        case .ability:
+            return "Ability"
+        case .splash:
+            return "Splash"
+        }
+    }
 }

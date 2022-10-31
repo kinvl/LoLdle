@@ -7,6 +7,7 @@
 
 @testable import LoLdle
 import RxSwift
+import UIKit
 
 final class GetAllChampionsNamesUseCaseMock: GettingAllChampionsNamesUseCase {
     func execute() -> Single<[String]> {
@@ -55,5 +56,17 @@ final class DownloadhampionsDataUseCaseMock: DownloadingChampionsDataUseCase {
     func execute() -> Completable {
         wasExecuteCalled = true
         return .empty()
+    }
+}
+
+final class GetChampionUseCaseMock: GettingChampionUseCase {
+    func execute(forName name: String) -> Champion? {
+        return name == "one" ? Fake.Champions.one : Fake.Champions.two
+    }
+}
+
+final class GetChampionIconUseCaseMock: GettingChampionIconUseCase {
+    func execute(forChampionId id: Int?) -> UIImage? {
+        return UIImage()
     }
 }

@@ -8,15 +8,19 @@
 @testable import LoLdle
 import RxSwift
 import RxCocoa
+import Foundation
 
 final class ChallengeViewModelMock: ChallengeViewModeling {
     var wasPrepareCalled = false
     
     var suggestions: Driver<[String]> = .just([]).asDriver()
     var guesses: [ChampionCellItemModel] = []
+    var isTodaysAlreadyChallengeCompleted: Bool = false
+    var completedChallengeInfo: CompletedChallengeInfo? = nil
+    var resetDate: Date = Date()
     
-    func checkAnswer(_ name: String) -> Single<Bool> {
-        return .just(false)
+    func isAnswerCorrect(_ name: String) -> Bool {
+        return false
     }
     
     func prepare() -> Single<[String]> {

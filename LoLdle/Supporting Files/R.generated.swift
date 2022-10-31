@@ -226,12 +226,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 4 files.
+  /// This `R.file` struct is generated, and contains static references to 8 files.
   struct file {
     /// Resource file `Beaufort-Bold.ttf`.
     static let beaufortBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Beaufort-Bold", pathExtension: "ttf")
     /// Resource file `Beaufort-Regular.ttf`.
     static let beaufortRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Beaufort-Regular", pathExtension: "ttf")
+    /// Resource file `Fire.png`.
+    static let firePng = Rswift.FileResource(bundle: R.hostingBundle, name: "Fire", pathExtension: "png")
+    /// Resource file `Fragment.png`.
+    static let fragmentPng = Rswift.FileResource(bundle: R.hostingBundle, name: "Fragment", pathExtension: "png")
+    /// Resource file `Smoke.png`.
+    static let smokePng = Rswift.FileResource(bundle: R.hostingBundle, name: "Smoke", pathExtension: "png")
+    /// Resource file `Sparkle.png`.
+    static let sparklePng = Rswift.FileResource(bundle: R.hostingBundle, name: "Sparkle", pathExtension: "png")
     /// Resource file `congratulations.json`.
     static let congratulationsJson = Rswift.FileResource(bundle: R.hostingBundle, name: "congratulations", pathExtension: "json")
     /// Resource file `error.json`.
@@ -246,6 +254,30 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Beaufort-Regular", withExtension: "ttf")`
     static func beaufortRegularTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.beaufortRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Fire", withExtension: "png")`
+    static func firePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Fragment", withExtension: "png")`
+    static func fragmentPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fragmentPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Smoke", withExtension: "png")`
+    static func smokePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.smokePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Sparkle", withExtension: "png")`
+    static func sparklePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sparklePng
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -289,20 +321,69 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 13 images.
   struct image {
+    /// Image `Fire`.
+    static let fire = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fire")
+    /// Image `Fragment`.
+    static let fragment = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fragment")
+    /// Image `Smoke`.
+    static let smoke = Rswift.ImageResource(bundle: R.hostingBundle, name: "Smoke")
+    /// Image `Sparkle`.
+    static let sparkle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Sparkle")
+    /// Image `about_icon`.
+    static let about_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "about_icon")
     /// Image `answer_arrow`.
     static let answer_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "answer_arrow")
     /// Image `back_arrow`.
     static let back_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "back_arrow")
     /// Image `background`.
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+    /// Image `exit_button`.
+    static let exit_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "exit_button")
     /// Image `league_button_background_disabled`.
     static let league_button_background_disabled = Rswift.ImageResource(bundle: R.hostingBundle, name: "league_button_background_disabled")
     /// Image `league_button_background`.
     static let league_button_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "league_button_background")
     /// Image `logo`.
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
+    /// Image `textfield_background`.
+    static let textfield_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "textfield_background")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Fire", bundle: ..., traitCollection: ...)`
+    static func fire(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fire, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Fragment", bundle: ..., traitCollection: ...)`
+    static func fragment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fragment, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Smoke", bundle: ..., traitCollection: ...)`
+    static func smoke(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.smoke, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Sparkle", bundle: ..., traitCollection: ...)`
+    static func sparkle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sparkle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "about_icon", bundle: ..., traitCollection: ...)`
+    static func about_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.about_icon, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "answer_arrow", bundle: ..., traitCollection: ...)`
@@ -322,6 +403,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "background", bundle: ..., traitCollection: ...)`
     static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "exit_button", bundle: ..., traitCollection: ...)`
+    static func exit_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.exit_button, compatibleWith: traitCollection)
     }
     #endif
 
@@ -346,12 +434,19 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "textfield_background", bundle: ..., traitCollection: ...)`
+    static func textfield_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.textfield_background, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 83 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 86 localization keys.
     struct localizable {
       /// en translation: A database access error has occurred. Try relaunching the app.
       ///
@@ -457,6 +552,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let champion_resource_energy = Rswift.StringResource(key: "champion_resource_energy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Enter champion's name in the text field and press the answer button or "Done" on your keyboard. The traits of the champion whose name you just entered will appear.   Green background indicates an exact match. Orange background indicates a partial match.  Red background indicates that you missed. 
+      ///
+      /// Locales: en
+      static let how_to_play_details = Rswift.StringResource(key: "how_to_play_details", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Female
       ///
       /// Locales: en
@@ -501,6 +600,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let champion_resource_heat = Rswift.StringResource(key: "champion_resource_heat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: How to play?
+      ///
+      /// Locales: en
+      static let how_to_play_header = Rswift.StringResource(key: "how_to_play_header", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Human
       ///
       /// Locales: en
@@ -529,6 +632,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let champion_region_kathkan = Rswift.StringResource(key: "champion_region_kathkan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: LoLdle was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+      ///
+      /// Locales: en
+      static let legal_notice = Rswift.StringResource(key: "legal_notice", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Magically Altered
       ///
       /// Locales: en
@@ -1076,6 +1183,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("champion_resource_energy", bundle: bundle, comment: "")
       }
 
+      /// en translation: Enter champion's name in the text field and press the answer button or "Done" on your keyboard. The traits of the champion whose name you just entered will appear.   Green background indicates an exact match. Orange background indicates a partial match.  Red background indicates that you missed. 
+      ///
+      /// Locales: en
+      static func how_to_play_details(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("how_to_play_details", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "how_to_play_details"
+        }
+
+        return NSLocalizedString("how_to_play_details", bundle: bundle, comment: "")
+      }
+
       /// en translation: Female
       ///
       /// Locales: en
@@ -1241,6 +1363,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("champion_resource_heat", bundle: bundle, comment: "")
       }
 
+      /// en translation: How to play?
+      ///
+      /// Locales: en
+      static func how_to_play_header(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("how_to_play_header", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "how_to_play_header"
+        }
+
+        return NSLocalizedString("how_to_play_header", bundle: bundle, comment: "")
+      }
+
       /// en translation: Human
       ///
       /// Locales: en
@@ -1344,6 +1481,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("champion_region_kathkan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: LoLdle was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+      ///
+      /// Locales: en
+      static func legal_notice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("legal_notice", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "legal_notice"
+        }
+
+        return NSLocalizedString("legal_notice", bundle: bundle, comment: "")
       }
 
       /// en translation: Magically Altered

@@ -8,18 +8,24 @@
 import RxSwift
 import RxRelay
 import RxCocoa
+import Foundation
 
 protocol ChallengeViewModeling {
     var suggestions: Driver<[String]> { get }
     var guesses: [ChampionCellItemModel] { get }
-    func checkAnswer(_ name: String) -> Single<Bool>
+    var isTodaysAlreadyChallengeCompleted: Bool { get }
+    var completedChallengeInfo: CompletedChallengeInfo? { get }
+    var resetDate: Date { get }
+    func isAnswerCorrect(_ name: String) -> Bool
     func prepare() -> Single<[String]>
 }
 
 final class ChallengeViewModel: ChallengeViewModeling {
-    private let repository: ChampionsRepository
+    private let getChampionUseCase: GettingChampionUseCase
     private let getAllChampionsNamesUseCase: GettingAllChampionsNamesUseCase
     private let getChallengeSecretUseCase: GettingChallengeSecretUseCase
+    private let getChampionIconUseCase: GettingChampionIconUseCase
+    private let challengeCompletionManager: ChallengeCompletionManaging
     
     private let challengeType: ChallengeType
     private var _suggestions: BehaviorRelay<[String]> = .init(value: [])
@@ -34,34 +40,48 @@ final class ChallengeViewModel: ChallengeViewModeling {
         _guesses
     }
     
+    var isTodaysAlreadyChallengeCompleted: Bool {
+        challengeCompletionManager.isTodaysChallengeCompleted(challengeType)
+    }
+    
+    var completedChallengeInfo: CompletedChallengeInfo? {
+        if let guess = guesses.first {
+            return CompletedChallengeInfo(numberOfGuesses: guesses.count, icon: guess.icon, name: guess.champion.name)
+        }
+        
+        return lastCompletedChallengeInfo()
+    }
+    
+    var resetDate: Date {
+        challengeCompletionManager.todays10PM
+    }
+    
     // MARK: - Initialization
-    init(challengeType: ChallengeType, getAllChampionsNamesUseCase: GettingAllChampionsNamesUseCase, repository: ChampionsRepository, getChallengeSecretUseCase: GettingChallengeSecretUseCase) {
+    init(challengeType: ChallengeType, getAllChampionsNamesUseCase: GettingAllChampionsNamesUseCase, getChampionUseCase: GettingChampionUseCase, getChallengeSecretUseCase: GettingChallengeSecretUseCase, getChampionIconUseCase: GettingChampionIconUseCase, challengeCompletionManager: ChallengeCompletionManaging) {
         self.challengeType = challengeType
         self.getAllChampionsNamesUseCase = getAllChampionsNamesUseCase
-        self.repository = repository
+        self.getChampionUseCase = getChampionUseCase
         self.getChallengeSecretUseCase = getChallengeSecretUseCase
+        self.getChampionIconUseCase = getChampionIconUseCase
+        self.challengeCompletionManager = challengeCompletionManager
     }
     
     // MARK: - ChallengeViewModeling
-    func checkAnswer(_ name: String) -> Single<Bool> {
-        removeSuggestion(name)
+    func isAnswerCorrect(_ name: String) -> Bool {
+        guard let champion = self.getChampionUseCase.execute(forName: name) else {
+            return false
+        }
         
-        return repository.getChampion(named: name).flatMap { [weak self] champion in
-            guard let self = self, let champion = champion else { return .error(LoLdleError.databaseFailure) }
-            
-            return self.repository.getChampionIcon(id: champion.id)
-                .do(onSuccess: { icon in
-                    let answer = champion.isEqualTo(self.challengeSecret)
-                    let guess = (answer: answer, champion: champion, icon: icon)
-                    self._guesses.insert(guess, at: 0)
-                })
-                .map { _ in
-                    return champion
-                }
+        self.removeSuggestion(name)
+        self.updateGuessesArray(champion: champion)
+        
+        let isCorrect = champion.compareAgainst(challengeSecret).isAnswerCorrect
+        
+        if let guess = guesses.first, isCorrect {
+            self.challengeCompletionManager.markTodaysChallengeAsCompleted(challengeType, numberOfGuesses: guesses.count, name: guess.champion.name, id: guess.champion.id)
         }
-        .map { [weak self] (champion: Champion) in
-            self?.isAnswerValid(champion: champion) ?? false
-        }
+        
+        return isCorrect
     }
     
     func prepare() -> Single<[String]> {
@@ -86,15 +106,19 @@ final class ChallengeViewModel: ChallengeViewModeling {
         }
     }
     
-    private func isAnswerValid(champion: Champion) -> Bool {
-        let answer = champion.isEqualTo(self.challengeSecret)
-        return answer.name == .correct &&
-        answer.gender == .correct &&
-        answer.position == .correct &&
-        answer.species == .correct &&
-        answer.resource == .correct &&
-        answer.rangeType == .correct &&
-        answer.region == .correct &&
-        answer.releaseYear == .correct
+    private func updateGuessesArray(champion: Champion) {
+        let answer = champion.compareAgainst(self.challengeSecret)
+        let icon = getChampionIconUseCase.execute(forChampionId: champion.id)
+        let guess = (answer: answer, champion: champion, icon: icon)
+        self._guesses.insert(guess, at: 0)
+    }
+    
+    private func lastCompletedChallengeInfo() -> CompletedChallengeInfo? {
+        guard let numberOfGuesses = challengeCompletionManager.lastNumberOfGuesses(forChallenge: challengeType),
+              let name = challengeCompletionManager.lastChampionName(forChallenge: challengeType),
+              let id = challengeCompletionManager.lastChampionId(forChallenge: challengeType),
+              let icon = getChampionIconUseCase.execute(forChampionId: id) else { return nil}
+        
+        return CompletedChallengeInfo(numberOfGuesses: numberOfGuesses, icon: icon, name: name)
     }
 }

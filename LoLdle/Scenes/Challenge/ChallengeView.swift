@@ -38,6 +38,14 @@ final class ChallengeView: UIView {
         return imageView
     }()
     
+    let navigationBarCountdownLabel: CountdownLabel = {
+        let label = CountdownLabel(frame: .zero)
+        label.font = R.font.beaufortBold(size: 22)
+        label.textColor = R.color.text()
+        label.animationType = .Evaporate
+        return label
+    }()
+    
     let tableView: UITableView = {
         let table = UITableView()
         table.register(ChampionChallengeCell.self, forCellReuseIdentifier: ChampionChallengeCell.identifier)
@@ -52,24 +60,23 @@ final class ChallengeView: UIView {
     let answerTextField: AutocompleteField = {
         let textField = AutocompleteField()
         textField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.answer_textfield_placeholder(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
-        textField.backgroundColor = R.color.background()
         textField.textColor = R.color.text()
+        textField.font = R.font.beaufortW01Regular(size: 19)
+        textField.horizontalPadding = 10
         textField.suggestionColor = .systemGray
         textField.tintColor = R.color.accentColor()
-        textField.borderStyle = .bezel
-        textField.layer.borderColor = R.color.accentColor()?.cgColor
-        textField.layer.borderWidth = 2
         textField.autocorrectionType = .no
         textField.spellCheckingType = .no
         textField.smartQuotesType = .no
         textField.returnKeyType = .done
+        textField.background = R.image.textfield_background()
         return textField
     }()
     
     let answerButton: UIButton = {
         let button = UIButton(type: .custom)
         let image = R.image.answer_arrow()
-        button.imageView?.tintColor = R.color.accentColor()
+        button.imageView?.contentMode = .scaleAspectFit
         button.setImage(image, for: .normal)
         return button
     }()
@@ -101,6 +108,7 @@ final class ChallengeView: UIView {
         addSubview(answerButton)
         answerButton.snp.makeConstraints { make in
             make.width.equalTo(self.snp.width).multipliedBy(0.13)
+            make.height.equalTo(50)
             make.bottom.equalTo(keyboardLayoutGuide.snp.top).offset(-Spacing.Vertical.tiny)
             make.trailing.equalToSuperview()
         }
@@ -108,7 +116,7 @@ final class ChallengeView: UIView {
         addSubview(answerTextField)
         answerTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.trailing.equalTo(answerButton.snp.leading).inset(-5)
+            make.trailing.equalTo(answerButton.snp.leading)
             make.bottom.equalTo(keyboardLayoutGuide.snp.top).inset(-Spacing.Vertical.tiny)
             make.height.equalTo(answerButton.snp.height)
         }
@@ -125,8 +133,8 @@ final class ChallengeView: UIView {
         answerTextField.suggestions = suggestions
     }
     
-    func addWinnerView(numberOfGuesses: Int, championItemModel: ChampionCellItemModel?) {
-        winnerView.configureWith(numberOfGuesses: numberOfGuesses, championItemModel: championItemModel)
+    func addWinnerView(info: CompletedChallengeInfo) {
+        winnerView.configureWith(numberOfGuesses: info.numberOfGuesses, icon: info.icon, name: info.name)
         
         addSubview(winnerView)
         winnerView.snp.makeConstraints { make in
@@ -155,7 +163,7 @@ final class ChallengeView: UIView {
         let scale: CGFloat = 512 / 209 // Logo image is 512x209 pixels
         let height = navigationBar?.frame.height ?? 0
         let width = height * scale
-        
+
         navigationBarLogo.snp.makeConstraints { make in
             make.height.equalTo(height)
             make.width.equalTo(width)

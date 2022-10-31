@@ -15,6 +15,8 @@ protocol PersistentStoring {
     func objects<Element: Object>(_ type: Element.Type) -> Results<Element>
     func moveFile(from location: URL, to destination: URL) throws
     func fileCount(in directory: URL) throws -> Int
+    func dictionary(for key: String) -> [AnyHashable: Any]?
+    func save(value: Any, forKey key: String)
 }
 
 final class PersistentStorageRepository: PersistentStoring {
@@ -50,5 +52,13 @@ final class PersistentStorageRepository: PersistentStoring {
     
     func fileCount(in directory: URL) throws -> Int {
         try filesStorage.fileCount(in: directory)
+    }
+    
+    func dictionary(for key: String) -> [AnyHashable: Any]? {
+        userDefaultsStorage.dictionary(forKey: key)
+    }
+    
+    func save(value: Any, forKey key: String) {
+        userDefaultsStorage.save(value: value, forKey: key)
     }
 }
