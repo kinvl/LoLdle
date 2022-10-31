@@ -12,6 +12,10 @@
     <strong><a href="#requirements">Requirements</a></strong>
 </p>
 
+<p align="center">
+  <a href="https://app.bitrise.io/app/4f937fe5538d3e20"><img src="https://app.bitrise.io/app/4f937fe5538d3e20/status.svg?token=WDfXhXJ7uzS0hYRqBuMytA&branch=main" /></a>
+</p>
+
 ## Features
 LoLdle for iOS. A game in which you guess champions from League of Legends. 📱 <br>
 Works together with [LoLdle-backend](https://github.com/kinvl/LoLdle-backend).
@@ -29,7 +33,7 @@ There are four game modes:
 
 ## Installation
 ### AppStore
-Available soon on the AppStore. <br>
+Available _soon_ on the AppStore. <br>
 [![](https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg)](https://github.com/kinvl/LoLdle)
 
 ### Xcode
@@ -38,3 +42,6 @@ Alternatively, you can clone this repository to your drive and build it yourself
 ## Requirements
 Supports iOS 13.0 and above. <br>
 Requires an internet connection. <br>
+
+---
+<sub>LoLdle was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.</sub> ![cool](https://user-images.githubusercontent.com/78863523/199114337-d92ed43c-e9d1-4d09-a4f0-a78310b59904.png)
