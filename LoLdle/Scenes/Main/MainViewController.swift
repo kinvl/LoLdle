@@ -43,6 +43,9 @@ class MainViewController: BaseViewController<MainView> {
             castView.championChallengeButton.rx.tap.bind { [weak self] _ in
                 Analytics.shared.trackChampionChallengeTapped()
                 self?.router.presentChampionChallenge(from: self?.navigationController)
+            },
+            castView.aboutButton.rx.tap.bind { [weak self] _ in
+                self?.router.presentAbout(from: self)
             }
         ])
     }

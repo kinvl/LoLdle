@@ -60,24 +60,23 @@ final class ChallengeView: UIView {
     let answerTextField: AutocompleteField = {
         let textField = AutocompleteField()
         textField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.answer_textfield_placeholder(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
-        textField.backgroundColor = R.color.background()
         textField.textColor = R.color.text()
+        textField.font = R.font.beaufortW01Regular(size: 19)
         textField.suggestionColor = .systemGray
         textField.tintColor = R.color.accentColor()
         textField.borderStyle = .bezel
-        textField.layer.borderColor = R.color.accentColor()?.cgColor
-        textField.layer.borderWidth = 2
         textField.autocorrectionType = .no
         textField.spellCheckingType = .no
         textField.smartQuotesType = .no
         textField.returnKeyType = .done
+        textField.background = R.image.textfield_background()
         return textField
     }()
     
     let answerButton: UIButton = {
         let button = UIButton(type: .custom)
         let image = R.image.answer_arrow()
-        button.imageView?.tintColor = R.color.accentColor()
+        button.imageView?.contentMode = .scaleAspectFit
         button.setImage(image, for: .normal)
         return button
     }()
@@ -109,6 +108,7 @@ final class ChallengeView: UIView {
         addSubview(answerButton)
         answerButton.snp.makeConstraints { make in
             make.width.equalTo(self.snp.width).multipliedBy(0.13)
+            make.height.equalTo(50)
             make.bottom.equalTo(keyboardLayoutGuide.snp.top).offset(-Spacing.Vertical.tiny)
             make.trailing.equalToSuperview()
         }
@@ -116,7 +116,7 @@ final class ChallengeView: UIView {
         addSubview(answerTextField)
         answerTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.trailing.equalTo(answerButton.snp.leading).inset(-5)
+            make.trailing.equalTo(answerButton.snp.leading)
             make.bottom.equalTo(keyboardLayoutGuide.snp.top).inset(-Spacing.Vertical.tiny)
             make.height.equalTo(answerButton.snp.height)
         }

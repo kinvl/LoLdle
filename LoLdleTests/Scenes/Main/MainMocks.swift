@@ -17,8 +17,13 @@ final class MainViewModelMock: MainViewModeling {
 
 final class MainRouterMock: MainRouting {
     var wasPresentChampionChallengeCalled = false
+    var waspresentAboutCalled = false
     
     func presentChampionChallenge(from parent: UINavigationController?) {
         wasPresentChampionChallengeCalled = true
+    }
+    
+    func presentAbout(from parent: UIViewController?) {
+        waspresentAboutCalled = true
     }
 }

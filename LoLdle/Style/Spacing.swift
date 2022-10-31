@@ -14,6 +14,9 @@ struct Spacing {
         
         /// Equal to 30.
         static let mainButton = 30.0
+        
+        /// Equal to 40.
+        static let big = 40.0
     }
     
     struct Vertical {

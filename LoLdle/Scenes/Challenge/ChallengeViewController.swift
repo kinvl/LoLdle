@@ -99,7 +99,9 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
     private func setNavigationBarCountdown() {
         castView.navigationBarLogo.removeFromSuperview()
         castView.navigationBarCountdownLabel.setCountDownDate(targetDate: viewModel.resetDate)
-        castView.navigationBarCountdownLabel.start()
+        castView.navigationBarCountdownLabel.start { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
         navigationItem.titleView = castView.navigationBarCountdownLabel
     }
     

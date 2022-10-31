@@ -75,6 +75,10 @@
 		13A7B5E22910078C00C21687 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CC2910078C00C21687 /* LTMorphingLabel+Sparkle.swift */; };
 		13A7B5E32910078C00C21687 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CD2910078C00C21687 /* LTMorphingLabel+Pixelate.swift */; };
 		13A7B5E42910078C00C21687 /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CE2910078C00C21687 /* LTMorphingEffect.swift */; };
+		13A7B5E929102EEE00C21687 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5E829102EEE00C21687 /* AboutViewController.swift */; };
+		13A7B5EB29102EF500C21687 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5EA29102EF500C21687 /* AboutView.swift */; };
+		13A7B5ED2910326D00C21687 /* AboutAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5EC2910326D00C21687 /* AboutAssembly.swift */; };
+		13A7B5F029104A1100C21687 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5EF29104A1100C21687 /* AboutViewControllerTests.swift */; };
 		13A9A00728CB37A0006C3684 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A00628CB37A0006C3684 /* MainRouter.swift */; };
 		13A9A00928CB3815006C3684 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A00828CB3815006C3684 /* MainAssembly.swift */; };
 		13A9A00B28CB399B006C3684 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A00A28CB399B006C3684 /* MainView.swift */; };
@@ -207,6 +211,10 @@
 		13A7B5CD2910078C00C21687 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
 		13A7B5CE2910078C00C21687 /* LTMorphingEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingEffect.swift; sourceTree = "<group>"; };
 		13A7B5D02910078C00C21687 /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
+		13A7B5E829102EEE00C21687 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		13A7B5EA29102EF500C21687 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		13A7B5EC2910326D00C21687 /* AboutAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAssembly.swift; sourceTree = "<group>"; };
+		13A7B5EF29104A1100C21687 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		13A9A00628CB37A0006C3684 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		13A9A00828CB3815006C3684 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		13A9A00A28CB399B006C3684 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -334,6 +342,7 @@
 				138B4C0F28FC985800EBFE44 /* UseCaseAssembly.swift */,
 				138B4C1128FC9B6000EBFE44 /* NetworkAssembly.swift */,
 				13A7B57F290FE8A000C21687 /* UtilityAssembly.swift */,
+				13A7B5EC2910326D00C21687 /* AboutAssembly.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -504,9 +513,27 @@
 			path = Particles;
 			sourceTree = "<group>";
 		};
+		13A7B5E729102ED800C21687 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				13A7B5E829102EEE00C21687 /* AboutViewController.swift */,
+				13A7B5EA29102EF500C21687 /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		13A7B5EE291049FD00C21687 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				13A7B5EF29104A1100C21687 /* AboutViewControllerTests.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		13A9A00428CB36E3006C3684 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				13A7B5E729102ED800C21687 /* About */,
 				134D454C28CDE36B0000C27F /* Challenge */,
 				13A9A00528CB36F4006C3684 /* Main */,
 			);
@@ -645,6 +672,7 @@
 		13ED5EC128FC302600E37B90 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				13A7B5EE291049FD00C21687 /* About */,
 				13ED5EC228FC303600E37B90 /* Challenge */,
 				13ED5EC328FC303D00E37B90 /* Main */,
 			);
@@ -882,6 +910,7 @@
 				13258F0828CA8DF600828846 /* StorageAssembly.swift in Sources */,
 				13EC010028CF947D001D3CFC /* BaseViewController.swift in Sources */,
 				1315495B290D631100CC5A9D /* Analytics.swift in Sources */,
+				13A7B5ED2910326D00C21687 /* AboutAssembly.swift in Sources */,
 				13B607A328AD0E0E004D6CC1 /* Resource.swift in Sources */,
 				138B4C1028FC985800EBFE44 /* UseCaseAssembly.swift in Sources */,
 				1340CA9C28C14EC100BA0B01 /* DirectoryURLProvider.swift in Sources */,
@@ -918,6 +947,7 @@
 				13B6079F28AD0E04004D6CC1 /* Position.swift in Sources */,
 				13A7B5E02910078C00C21687 /* LTMorphingLabel.swift in Sources */,
 				13FB8AF528F3779400CB1154 /* ChallengeSecret.swift in Sources */,
+				13A7B5EB29102EF500C21687 /* AboutView.swift in Sources */,
 				13258EE428CA74F900828846 /* MainViewModel.swift in Sources */,
 				13DE793C290FC0EB0058CF48 /* GetChampionIconUseCase.swift in Sources */,
 				137D87AA28DE1B0000F675BA /* Champion+Extensions.swift in Sources */,
@@ -937,6 +967,7 @@
 				13B6076E28AD0C81004D6CC1 /* MainViewController.swift in Sources */,
 				13CD594C28DA5FB8008B85FB /* ImageChallengeCell.swift in Sources */,
 				13B6076A28AD0C81004D6CC1 /* AppDelegate.swift in Sources */,
+				13A7B5E929102EEE00C21687 /* AboutViewController.swift in Sources */,
 				13A7B5DF2910078C00C21687 /* LTMorphingLabel+Burn.swift in Sources */,
 				134D454E28CDE3DB0000C27F /* ChallengeViewController.swift in Sources */,
 				13D6FC1C28CA169F007B0668 /* RealmStorage.swift in Sources */,
@@ -951,6 +982,7 @@
 			files = (
 				135A9D68290B2BCE00A08C5C /* Fakes.swift in Sources */,
 				135A9D61290B17F300A08C5C /* ChallengeMocks.swift in Sources */,
+				13A7B5F029104A1100C21687 /* AboutViewControllerTests.swift in Sources */,
 				13A7B582290FEA2F00C21687 /* UtilityMocks.swift in Sources */,
 				13ED5EC728FC312500E37B90 /* MainMocks.swift in Sources */,
 				13A7B585290FEAE800C21687 /* ChallengeCompletionManagerTests.swift in Sources */,

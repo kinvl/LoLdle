@@ -54,6 +54,12 @@ final class MainView: UIView {
         return button
     }()
     
+    let aboutButton: UIButton = {
+        let button = UIButton()
+        button.setImage(R.image.about_icon(), for: .normal)
+        return button
+    }()
+    
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
@@ -103,6 +109,12 @@ final class MainView: UIView {
             make.top.equalTo(abilityChallengeButton.snp.bottom).offset(Spacing.Vertical.medium)
             make.leading.trailing.equalToSuperview().inset(Spacing.Horizontal.mainButton)
             make.height.equalTo(Height.mainButton)
+        }
+        
+        addSubview(aboutButton)
+        aboutButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(Spacing.Vertical.big)
+            make.centerX.equalToSuperview()
         }
     }
 }

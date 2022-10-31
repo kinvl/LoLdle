@@ -20,7 +20,7 @@ final class MainViewControllerTests: XCTestCase {
         XCTAssertNil(viewController)
     }
     
-    func testSomething() {
+    func testNavigatingToChallenge() {
         // Given:
         let viewModel = MainViewModelMock()
         let router = MainRouterMock()
@@ -31,5 +31,18 @@ final class MainViewControllerTests: XCTestCase {
         
         // Then:
         XCTAssertTrue(router.wasPresentChampionChallengeCalled)
+    }
+    
+    func testNavigatingToAbout() {
+        // Given:
+        let viewModel = MainViewModelMock()
+        let router = MainRouterMock()
+        let viewController = MainViewController(viewModel: viewModel, router: router)
+        
+        // When:
+        viewController.castView.aboutButton.sendActions(for: .touchUpInside)
+        
+        // Then:
+        XCTAssertTrue(router.waspresentAboutCalled)
     }
 }
