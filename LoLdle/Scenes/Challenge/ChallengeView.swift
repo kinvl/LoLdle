@@ -38,6 +38,14 @@ final class ChallengeView: UIView {
         return imageView
     }()
     
+    let navigationBarCountdownLabel: CountdownLabel = {
+        let label = CountdownLabel(frame: .zero)
+        label.font = R.font.beaufortBold(size: 22)
+        label.textColor = R.color.text()
+        label.animationType = .Evaporate
+        return label
+    }()
+    
     let tableView: UITableView = {
         let table = UITableView()
         table.register(ChampionChallengeCell.self, forCellReuseIdentifier: ChampionChallengeCell.identifier)
@@ -155,7 +163,7 @@ final class ChallengeView: UIView {
         let scale: CGFloat = 512 / 209 // Logo image is 512x209 pixels
         let height = navigationBar?.frame.height ?? 0
         let width = height * scale
-        
+
         navigationBarLogo.snp.makeConstraints { make in
             make.height.equalTo(height)
             make.width.equalTo(width)

@@ -8,6 +8,7 @@
 @testable import LoLdle
 import RxSwift
 import RxCocoa
+import Foundation
 
 final class ChallengeViewModelMock: ChallengeViewModeling {
     var wasPrepareCalled = false
@@ -16,6 +17,7 @@ final class ChallengeViewModelMock: ChallengeViewModeling {
     var guesses: [ChampionCellItemModel] = []
     var isTodaysAlreadyChallengeCompleted: Bool = false
     var completedChallengeInfo: CompletedChallengeInfo? = nil
+    var resetDate: Date = Date()
     
     func isAnswerCorrect(_ name: String) -> Bool {
         return false

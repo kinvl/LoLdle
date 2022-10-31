@@ -46,6 +46,10 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
     // MARK: - Private
     private func setupNavigationBarItems() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: castView.backButton)
+        if viewModel.isTodaysAlreadyChallengeCompleted {
+            setNavigationBarCountdown()
+            return
+        }
         navigationItem.titleView = castView.navigationBarLogo
     }
     
@@ -85,10 +89,18 @@ class ChallengeViewController: BaseViewController<ChallengeView>, UITableViewDat
     }
     
     private func presentWinnerView() {
-        self.dismissKeyboard()
+        dismissKeyboard()
+        setNavigationBarCountdown()
         if let completedChallengeInfo = viewModel.completedChallengeInfo {
             castView.addWinnerView(info: completedChallengeInfo)
         }
+    }
+    
+    private func setNavigationBarCountdown() {
+        castView.navigationBarLogo.removeFromSuperview()
+        castView.navigationBarCountdownLabel.setCountDownDate(targetDate: viewModel.resetDate)
+        castView.navigationBarCountdownLabel.start()
+        navigationItem.titleView = castView.navigationBarCountdownLabel
     }
     
     // MARK: - UITableViewDataSource
