@@ -19,6 +19,11 @@
 "winner_number_of_guesses" = "You guessed the correct champion in %@ tries! 🏆";
 "winner_first_try" = "You guessed the correct champion on the first try! 🏆";
 
+// MARK: - About
+"legal_notice" = "LoLdle was created under Riot Games' \"Legal Jibber Jabber\" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.";
+"how_to_play_header" = "How to play?";
+"how_to_play_details" = "Enter champion's name in the text field and press the answer button or \"Done\" on your keyboard.\nThe traits of the champion whose name you just entered will appear.\n \nGreen background indicates an exact match.\nOrange background indicates a partial match. \nRed background indicates that you missed.\n";
+
 // MARK: - Errors
 "error_common_unknown" = "An unknown error occured.";
 "error_network_common" = "Unable to make a network request.\nCheck your internet connection.";
