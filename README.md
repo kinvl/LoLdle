@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://app.bitrise.io/app/4f937fe5538d3e20"><img src="https://app.bitrise.io/app/4f937fe5538d3e20/status.svg?token=WDfXhXJ7uzS0hYRqBuMytA&branch=main" /></a>
+  <a href="https://app.bitrise.io/app/7e8647d645ff58d3"><img src="https://app.bitrise.io/app/7e8647d645ff58d3/status.svg?token=FPQNGnKUWpt0Tj93woNV_A&branch=main" /></a>
 </p>
 
 ## Features
