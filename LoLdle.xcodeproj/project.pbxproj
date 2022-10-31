@@ -57,6 +57,24 @@
 		13A7B582290FEA2F00C21687 /* UtilityMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B581290FEA2F00C21687 /* UtilityMocks.swift */; };
 		13A7B585290FEAE800C21687 /* ChallengeCompletionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B584290FEAE800C21687 /* ChallengeCompletionManagerTests.swift */; };
 		13A7B587290FF2F800C21687 /* CompletedChallengeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B586290FF2F800C21687 /* CompletedChallengeInfo.swift */; };
+		13A7B5D22910078C00C21687 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5B92910078C00C21687 /* CountdownLabel.swift */; };
+		13A7B5D32910078C00C21687 /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5BB2910078C00C21687 /* LTMorphingLabel+Fall.swift */; };
+		13A7B5D42910078C00C21687 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5BD2910078C00C21687 /* LTEasing.swift */; };
+		13A7B5D52910078C00C21687 /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5BE2910078C00C21687 /* LTEmitterView.swift */; };
+		13A7B5D62910078C00C21687 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5BF2910078C00C21687 /* LTCharacterLimbo.swift */; };
+		13A7B5D72910078C00C21687 /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A7B5C12910078C00C21687 /* Fire.png */; };
+		13A7B5D82910078C00C21687 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A7B5C22910078C00C21687 /* Sparkle.png */; };
+		13A7B5D92910078C00C21687 /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A7B5C32910078C00C21687 /* Fragment.png */; };
+		13A7B5DA2910078C00C21687 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A7B5C42910078C00C21687 /* Smoke.png */; };
+		13A7B5DC2910078C00C21687 /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5C62910078C00C21687 /* LTCharacterDiffResult.swift */; };
+		13A7B5DD2910078C00C21687 /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5C72910078C00C21687 /* LTMorphingLabel+Evaporate.swift */; };
+		13A7B5DE2910078C00C21687 /* LTStringDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5C82910078C00C21687 /* LTStringDiffResult.swift */; };
+		13A7B5DF2910078C00C21687 /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5C92910078C00C21687 /* LTMorphingLabel+Burn.swift */; };
+		13A7B5E02910078C00C21687 /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CA2910078C00C21687 /* LTMorphingLabel.swift */; };
+		13A7B5E12910078C00C21687 /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CB2910078C00C21687 /* LTMorphingLabel+Anvil.swift */; };
+		13A7B5E22910078C00C21687 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CC2910078C00C21687 /* LTMorphingLabel+Sparkle.swift */; };
+		13A7B5E32910078C00C21687 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CD2910078C00C21687 /* LTMorphingLabel+Pixelate.swift */; };
+		13A7B5E42910078C00C21687 /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B5CE2910078C00C21687 /* LTMorphingEffect.swift */; };
 		13A9A00728CB37A0006C3684 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A00628CB37A0006C3684 /* MainRouter.swift */; };
 		13A9A00928CB3815006C3684 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A00828CB3815006C3684 /* MainAssembly.swift */; };
 		13A9A00B28CB399B006C3684 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A00A28CB399B006C3684 /* MainView.swift */; };
@@ -169,6 +187,26 @@
 		13A7B581290FEA2F00C21687 /* UtilityMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMocks.swift; sourceTree = "<group>"; };
 		13A7B584290FEAE800C21687 /* ChallengeCompletionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletionManagerTests.swift; sourceTree = "<group>"; };
 		13A7B586290FF2F800C21687 /* CompletedChallengeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChallengeInfo.swift; sourceTree = "<group>"; };
+		13A7B5B92910078C00C21687 /* CountdownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
+		13A7B5BB2910078C00C21687 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
+		13A7B5BC2910078C00C21687 /* LTMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMorphingLabel.h; sourceTree = "<group>"; };
+		13A7B5BD2910078C00C21687 /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		13A7B5BE2910078C00C21687 /* LTEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEmitterView.swift; sourceTree = "<group>"; };
+		13A7B5BF2910078C00C21687 /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterLimbo.swift; sourceTree = "<group>"; };
+		13A7B5C12910078C00C21687 /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		13A7B5C22910078C00C21687 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
+		13A7B5C32910078C00C21687 /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		13A7B5C42910078C00C21687 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		13A7B5C62910078C00C21687 /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterDiffResult.swift; sourceTree = "<group>"; };
+		13A7B5C72910078C00C21687 /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		13A7B5C82910078C00C21687 /* LTStringDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTStringDiffResult.swift; sourceTree = "<group>"; };
+		13A7B5C92910078C00C21687 /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		13A7B5CA2910078C00C21687 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		13A7B5CB2910078C00C21687 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		13A7B5CC2910078C00C21687 /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		13A7B5CD2910078C00C21687 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		13A7B5CE2910078C00C21687 /* LTMorphingEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingEffect.swift; sourceTree = "<group>"; };
+		13A7B5D02910078C00C21687 /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
 		13A9A00628CB37A0006C3684 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		13A9A00828CB3815006C3684 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		13A9A00A28CB399B006C3684 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -324,6 +362,7 @@
 		134D455128CDE46D0000C27F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				13A7B5B82910078C00C21687 /* CountdownLabel */,
 				1309E03428F21BDE004DC9C1 /* Cells */,
 				135B0B8C28D114AF00BB83A6 /* ActivityOverlay.swift */,
 				13E909E228FB306D006C951C /* ErrorView.swift */,
@@ -420,6 +459,49 @@
 				13A7B584290FEAE800C21687 /* ChallengeCompletionManagerTests.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		13A7B5B82910078C00C21687 /* CountdownLabel */ = {
+			isa = PBXGroup;
+			children = (
+				13A7B5B92910078C00C21687 /* CountdownLabel.swift */,
+				13A7B5BA2910078C00C21687 /* LTMorphingLabel */,
+				13A7B5D02910078C00C21687 /* CountdownLabel.h */,
+			);
+			path = CountdownLabel;
+			sourceTree = "<group>";
+		};
+		13A7B5BA2910078C00C21687 /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				13A7B5BB2910078C00C21687 /* LTMorphingLabel+Fall.swift */,
+				13A7B5BC2910078C00C21687 /* LTMorphingLabel.h */,
+				13A7B5BD2910078C00C21687 /* LTEasing.swift */,
+				13A7B5BE2910078C00C21687 /* LTEmitterView.swift */,
+				13A7B5BF2910078C00C21687 /* LTCharacterLimbo.swift */,
+				13A7B5C02910078C00C21687 /* Particles */,
+				13A7B5C62910078C00C21687 /* LTCharacterDiffResult.swift */,
+				13A7B5C72910078C00C21687 /* LTMorphingLabel+Evaporate.swift */,
+				13A7B5C82910078C00C21687 /* LTStringDiffResult.swift */,
+				13A7B5C92910078C00C21687 /* LTMorphingLabel+Burn.swift */,
+				13A7B5CA2910078C00C21687 /* LTMorphingLabel.swift */,
+				13A7B5CB2910078C00C21687 /* LTMorphingLabel+Anvil.swift */,
+				13A7B5CC2910078C00C21687 /* LTMorphingLabel+Sparkle.swift */,
+				13A7B5CD2910078C00C21687 /* LTMorphingLabel+Pixelate.swift */,
+				13A7B5CE2910078C00C21687 /* LTMorphingEffect.swift */,
+			);
+			path = LTMorphingLabel;
+			sourceTree = "<group>";
+		};
+		13A7B5C02910078C00C21687 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				13A7B5C12910078C00C21687 /* Fire.png */,
+				13A7B5C22910078C00C21687 /* Sparkle.png */,
+				13A7B5C32910078C00C21687 /* Fragment.png */,
+				13A7B5C42910078C00C21687 /* Smoke.png */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 		13A9A00428CB36E3006C3684 /* Scenes */ = {
@@ -724,9 +806,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A7B5D82910078C00C21687 /* Sparkle.png in Resources */,
 				13E909E128FB2FB5006C951C /* error.json in Resources */,
+				13A7B5DA2910078C00C21687 /* Smoke.png in Resources */,
+				13A7B5D72910078C00C21687 /* Fire.png in Resources */,
 				13B6077628AD0C86004D6CC1 /* LaunchScreen.storyboard in Resources */,
 				13E909DB28FAC93C006C951C /* congratulations.json in Resources */,
+				13A7B5D92910078C00C21687 /* Fragment.png in Resources */,
 				1309E02C28F20A10004DC9C1 /* Localizable.strings in Resources */,
 				13B6077328AD0C86004D6CC1 /* Assets.xcassets in Resources */,
 				13D343AA28D37F17004361FD /* Beaufort-Regular.ttf in Resources */,
@@ -775,9 +861,14 @@
 				13A7B57E290FE47700C21687 /* ChallengesRepository.swift in Sources */,
 				13E909DD28FAE701006C951C /* WinnerView.swift in Sources */,
 				13FB8AEF28F3728000CB1154 /* ChallengeType.swift in Sources */,
+				13A7B5E22910078C00C21687 /* LTMorphingLabel+Sparkle.swift in Sources */,
+				13A7B5E42910078C00C21687 /* LTMorphingEffect.swift in Sources */,
+				13A7B5D42910078C00C21687 /* LTEasing.swift in Sources */,
+				13A7B5D32910078C00C21687 /* LTMorphingLabel+Fall.swift in Sources */,
 				13CD594A28DA5E7F008B85FB /* ChampionChallengeCell.swift in Sources */,
 				137D87A828DE1A6E00F675BA /* Answer&ChampionAnswer.swift in Sources */,
 				13E909E328FB306D006C951C /* ErrorView.swift in Sources */,
+				13A7B5DC2910078C00C21687 /* LTCharacterDiffResult.swift in Sources */,
 				13A7B587290FF2F800C21687 /* CompletedChallengeInfo.swift in Sources */,
 				13CE6C6128D3A081003BFC5C /* ApplicationAssembly.swift in Sources */,
 				137D87AC28DE21B700F675BA /* GetAllChampionsNamesUseCase.swift in Sources */,
@@ -787,6 +878,7 @@
 				13A9A00B28CB399B006C3684 /* MainView.swift in Sources */,
 				13B6079B28AD0D03004D6CC1 /* Champion.swift in Sources */,
 				1309E03128F21695004DC9C1 /* Titleable.swift in Sources */,
+				13A7B5E12910078C00C21687 /* LTMorphingLabel+Anvil.swift in Sources */,
 				13258F0828CA8DF600828846 /* StorageAssembly.swift in Sources */,
 				13EC010028CF947D001D3CFC /* BaseViewController.swift in Sources */,
 				1315495B290D631100CC5A9D /* Analytics.swift in Sources */,
@@ -796,6 +888,8 @@
 				13A9A00928CB3815006C3684 /* MainAssembly.swift in Sources */,
 				134D455328CDE66C0000C27F /* ChallengeAssembly.swift in Sources */,
 				13B607A128AD0E09004D6CC1 /* Species.swift in Sources */,
+				13A7B5DD2910078C00C21687 /* LTMorphingLabel+Evaporate.swift in Sources */,
+				13A7B5DE2910078C00C21687 /* LTStringDiffResult.swift in Sources */,
 				13D6FC3228CA5D25007B0668 /* ChampionsRepository.swift in Sources */,
 				13B607A728AD0E1E004D6CC1 /* Region.swift in Sources */,
 				134D455728CE14FA0000C27F /* FilesStorage.swift in Sources */,
@@ -804,6 +898,7 @@
 				13D6FC3028CA5B00007B0668 /* PersistentStorageRepository.swift in Sources */,
 				13B4E40528CD2D5200F7F791 /* DataRepository.swift in Sources */,
 				13FB8AF328F3757400CB1154 /* GetChallengeSecretUseCase.swift in Sources */,
+				13A7B5E32910078C00C21687 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				136A3095290BFFA200B1A462 /* R.generated.swift in Sources */,
 				137D87A328DE0C5000F675BA /* ChampionAnswer.swift in Sources */,
 				134D455528CE07A20000C27F /* DownloadChampionsDataUseCase.swift in Sources */,
@@ -811,6 +906,7 @@
 				13A7B580290FE8A000C21687 /* UtilityAssembly.swift in Sources */,
 				135A9D5B290B14AD00A08C5C /* Reactive.swift in Sources */,
 				13B6079D28AD0DE1004D6CC1 /* Gender.swift in Sources */,
+				13A7B5D22910078C00C21687 /* CountdownLabel.swift in Sources */,
 				137D87AE28DE2C5F00F675BA /* Cell+Identifier.swift in Sources */,
 				13B4E3FA28CD29FE00F7F791 /* GetRemoteDataCountUseCase.swift in Sources */,
 				135A9D59290AFFCD00A08C5C /* Height.swift in Sources */,
@@ -818,12 +914,15 @@
 				13258EFA28CA879600828846 /* Network.swift in Sources */,
 				138B4C1228FC9B6000EBFE44 /* NetworkAssembly.swift in Sources */,
 				13DE793E290FC4630058CF48 /* GetChampionUseCase.swift in Sources */,
+				13A7B5D52910078C00C21687 /* LTEmitterView.swift in Sources */,
 				13B6079F28AD0E04004D6CC1 /* Position.swift in Sources */,
+				13A7B5E02910078C00C21687 /* LTMorphingLabel.swift in Sources */,
 				13FB8AF528F3779400CB1154 /* ChallengeSecret.swift in Sources */,
 				13258EE428CA74F900828846 /* MainViewModel.swift in Sources */,
 				13DE793C290FC0EB0058CF48 /* GetChampionIconUseCase.swift in Sources */,
 				137D87AA28DE1B0000F675BA /* Champion+Extensions.swift in Sources */,
 				1340CA9928C1491E00BA0B01 /* ChampionsData.swift in Sources */,
+				13A7B5D62910078C00C21687 /* LTCharacterLimbo.swift in Sources */,
 				13258F0A28CA8EA400828846 /* RepositoryAssembly.swift in Sources */,
 				134036A428D5003300167556 /* ChallengeView.swift in Sources */,
 				13B607A528AD0E17004D6CC1 /* RangeType.swift in Sources */,
@@ -838,6 +937,7 @@
 				13B6076E28AD0C81004D6CC1 /* MainViewController.swift in Sources */,
 				13CD594C28DA5FB8008B85FB /* ImageChallengeCell.swift in Sources */,
 				13B6076A28AD0C81004D6CC1 /* AppDelegate.swift in Sources */,
+				13A7B5DF2910078C00C21687 /* LTMorphingLabel+Burn.swift in Sources */,
 				134D454E28CDE3DB0000C27F /* ChallengeViewController.swift in Sources */,
 				13D6FC1C28CA169F007B0668 /* RealmStorage.swift in Sources */,
 				137D87A528DE0C8800F675BA /* Answer.swift in Sources */,

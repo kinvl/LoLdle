@@ -123,4 +123,20 @@ final class ChallengeCompletionManagerTests: XCTestCase {
         XCTAssertEqual(repository.infoToSave[CompletedChallengeInfo.UserDefaultsKeys.name] as! String, name)
         XCTAssertEqual(repository.infoToSave[CompletedChallengeInfo.UserDefaultsKeys.id] as! Int, id)
     }
+    
+    func testGettingTodays10PM() {
+        // Given:
+        let repository = ChallengesRepositoryMock(date: Date(), shouldReturnData: true)
+        let manager = ChallengeCompletionManager(repository: repository)
+        let calendar = Calendar.current
+        
+        // When:
+        let todays10PM = manager.todays10PM
+        let hour = calendar.component(.hour, from: todays10PM)
+        let minute = calendar.component(.minute, from: todays10PM)
+        
+        // Then:
+        XCTAssertEqual(hour, 22)
+        XCTAssertEqual(minute, 00)
+    }
 }

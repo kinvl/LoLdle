@@ -15,6 +15,7 @@ protocol ChallengeViewModeling {
     var guesses: [ChampionCellItemModel] { get }
     var isTodaysAlreadyChallengeCompleted: Bool { get }
     var completedChallengeInfo: CompletedChallengeInfo? { get }
+    var resetDate: Date { get }
     func isAnswerCorrect(_ name: String) -> Bool
     func prepare() -> Single<[String]>
 }
@@ -49,6 +50,10 @@ final class ChallengeViewModel: ChallengeViewModeling {
         }
         
         return lastCompletedChallengeInfo()
+    }
+    
+    var resetDate: Date {
+        challengeCompletionManager.todays10PM
     }
     
     // MARK: - Initialization

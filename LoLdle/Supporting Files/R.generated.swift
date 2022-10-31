@@ -226,12 +226,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 4 files.
+  /// This `R.file` struct is generated, and contains static references to 8 files.
   struct file {
     /// Resource file `Beaufort-Bold.ttf`.
     static let beaufortBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Beaufort-Bold", pathExtension: "ttf")
     /// Resource file `Beaufort-Regular.ttf`.
     static let beaufortRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Beaufort-Regular", pathExtension: "ttf")
+    /// Resource file `Fire.png`.
+    static let firePng = Rswift.FileResource(bundle: R.hostingBundle, name: "Fire", pathExtension: "png")
+    /// Resource file `Fragment.png`.
+    static let fragmentPng = Rswift.FileResource(bundle: R.hostingBundle, name: "Fragment", pathExtension: "png")
+    /// Resource file `Smoke.png`.
+    static let smokePng = Rswift.FileResource(bundle: R.hostingBundle, name: "Smoke", pathExtension: "png")
+    /// Resource file `Sparkle.png`.
+    static let sparklePng = Rswift.FileResource(bundle: R.hostingBundle, name: "Sparkle", pathExtension: "png")
     /// Resource file `congratulations.json`.
     static let congratulationsJson = Rswift.FileResource(bundle: R.hostingBundle, name: "congratulations", pathExtension: "json")
     /// Resource file `error.json`.
@@ -246,6 +254,30 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Beaufort-Regular", withExtension: "ttf")`
     static func beaufortRegularTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.beaufortRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Fire", withExtension: "png")`
+    static func firePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.firePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Fragment", withExtension: "png")`
+    static func fragmentPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.fragmentPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Smoke", withExtension: "png")`
+    static func smokePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.smokePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Sparkle", withExtension: "png")`
+    static func sparklePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sparklePng
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -289,8 +321,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
+    /// Image `Fire`.
+    static let fire = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fire")
+    /// Image `Fragment`.
+    static let fragment = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fragment")
+    /// Image `Smoke`.
+    static let smoke = Rswift.ImageResource(bundle: R.hostingBundle, name: "Smoke")
+    /// Image `Sparkle`.
+    static let sparkle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Sparkle")
     /// Image `answer_arrow`.
     static let answer_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "answer_arrow")
     /// Image `back_arrow`.
@@ -303,6 +343,34 @@ struct R: Rswift.Validatable {
     static let league_button_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "league_button_background")
     /// Image `logo`.
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Fire", bundle: ..., traitCollection: ...)`
+    static func fire(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fire, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Fragment", bundle: ..., traitCollection: ...)`
+    static func fragment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fragment, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Smoke", bundle: ..., traitCollection: ...)`
+    static func smoke(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.smoke, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Sparkle", bundle: ..., traitCollection: ...)`
+    static func sparkle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sparkle, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "answer_arrow", bundle: ..., traitCollection: ...)`
