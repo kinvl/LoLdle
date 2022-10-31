@@ -62,9 +62,9 @@ final class ChallengeView: UIView {
         textField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.answer_textfield_placeholder(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
         textField.textColor = R.color.text()
         textField.font = R.font.beaufortW01Regular(size: 19)
+        textField.horizontalPadding = 10
         textField.suggestionColor = .systemGray
         textField.tintColor = R.color.accentColor()
-        textField.borderStyle = .bezel
         textField.autocorrectionType = .no
         textField.spellCheckingType = .no
         textField.smartQuotesType = .no
