@@ -1,5 +1,5 @@
 //
-//  Answer+CustomOperator.swift
+//  Answer&ChampionAnswer.swift
 //  LoLdle
 //
 //  Created by Krzysztof Kinal on 23/09/2022.
@@ -32,5 +32,18 @@ extension String {
 extension Int {
     static func =?= (lhs: Int, rhs: Int) -> Answer {
         lhs == rhs ? .correct : .incorrect
+    }
+}
+
+extension ChampionAnswer {
+    var isAnswerCorrect: Bool {
+        self.name == .correct &&
+        self.gender == .correct &&
+        self.position == .correct &&
+        self.species == .correct &&
+        self.resource == .correct &&
+        self.rangeType == .correct &&
+        self.region == .correct &&
+        self.releaseYear == .correct
     }
 }

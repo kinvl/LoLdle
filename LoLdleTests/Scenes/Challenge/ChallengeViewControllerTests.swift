@@ -8,7 +8,7 @@
 @testable import LoLdle
 import XCTest
 
-class ChallengeViewControllerTests: XCTestCase {
+final class ChallengeViewControllerTests: XCTestCase {
     func testInitWithCoder() {
         // Given:
         let coder = NSCoder()

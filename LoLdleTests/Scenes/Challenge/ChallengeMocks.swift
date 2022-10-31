@@ -14,9 +14,11 @@ final class ChallengeViewModelMock: ChallengeViewModeling {
     
     var suggestions: Driver<[String]> = .just([]).asDriver()
     var guesses: [ChampionCellItemModel] = []
+    var isTodaysAlreadyChallengeCompleted: Bool = false
+    var completedChallengeInfo: CompletedChallengeInfo? = nil
     
-    func checkAnswer(_ name: String) -> Single<Bool> {
-        return .just(false)
+    func isAnswerCorrect(_ name: String) -> Bool {
+        return false
     }
     
     func prepare() -> Single<[String]> {

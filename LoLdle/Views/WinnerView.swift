@@ -77,12 +77,12 @@ final class WinnerView: UIView {
     }
     
     // MARK: - Internal
-    func configureWith(numberOfGuesses: Int, championItemModel: ChampionCellItemModel?) {
+    func configureWith(numberOfGuesses: Int, icon: UIImage?, name: String?) {
         numberOfGuessesLabel.text = numberOfGuesses > 1
                                         ? R.string.localizable.winner_number_of_guesses(numberOfGuesses.title)
                                         : R.string.localizable.winner_first_try()
-        championIconView.image = championItemModel?.icon
-        championNameLabel.text = championItemModel?.champion.name
+        championIconView.image = icon
+        championNameLabel.text = name
     }
     
     func playAnimation() {

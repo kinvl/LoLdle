@@ -28,11 +28,9 @@ final class GetChallengeSecretUseCase: GettingChallengeSecretUseCase {
     func execute(forChallengeType type: ChallengeType) -> Single<Champion?> {
         return service.getSecret(forChallengeType: type).flatMap { [weak self] (response: Data) -> Single<Champion?> in
             guard let self = self else { return .error(LoLdleError.networkRequestFailed) }
-            return self.dataRepository.handleChallengeSecret(response: response).flatMap { [weak self] secret in
-                guard let self = self else { return .error(LoLdleError.networkRequestFailed) }
-                return self.championsRepository.getChampion(named: secret.championName)
-                    .subscribe(on: ConcurrentMainScheduler.instance)
-            }
+            return self.dataRepository.handleChallengeSecret(response: response).map { [weak self] secret in
+                return self?.championsRepository.getChampion(named: secret.championName)
+            }.subscribe(on: ConcurrentMainScheduler.instance)
         }
     }
 }

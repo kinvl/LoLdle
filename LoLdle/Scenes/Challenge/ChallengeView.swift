@@ -125,8 +125,8 @@ final class ChallengeView: UIView {
         answerTextField.suggestions = suggestions
     }
     
-    func addWinnerView(numberOfGuesses: Int, championItemModel: ChampionCellItemModel?) {
-        winnerView.configureWith(numberOfGuesses: numberOfGuesses, championItemModel: championItemModel)
+    func addWinnerView(info: CompletedChallengeInfo) {
+        winnerView.configureWith(numberOfGuesses: info.numberOfGuesses, icon: info.icon, name: info.name)
         
         addSubview(winnerView)
         winnerView.snp.makeConstraints { make in

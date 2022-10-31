@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxBlocking
 
-class ChallengeViewModelTests: XCTestCase {
+final class ChallengeViewModelTests: XCTestCase {
     func testPreparingViewModel() {
         // Given:
         let viewModel = makeViewModel()
@@ -35,7 +35,7 @@ class ChallengeViewModelTests: XCTestCase {
         
         // When:
         _ = viewModel.prepare().toBlocking().materialize()
-        let isCorrect = try! viewModel.checkAnswer(answer).toBlocking().first()!
+        let isCorrect = viewModel.isAnswerCorrect(answer)
         
         // Then:
         XCTAssert(isCorrect)
@@ -48,7 +48,7 @@ class ChallengeViewModelTests: XCTestCase {
         
         // When:
         _ = viewModel.prepare().toBlocking().materialize()
-        let isCorrect = try! viewModel.checkAnswer(answer).toBlocking().first()!
+        let isCorrect = viewModel.isAnswerCorrect(answer)
         
         // Then:
         XCTAssertFalse(isCorrect)
@@ -62,12 +62,52 @@ class ChallengeViewModelTests: XCTestCase {
         
         // When:
         _ = viewModel.prepare().toBlocking().materialize()
-        _ = viewModel.checkAnswer(answer).toBlocking().materialize()
+        _ = viewModel.isAnswerCorrect(answer)
         
         // Then:
         let suggestions = try! viewModel.suggestions.toBlocking().first()!
         XCTAssertFalse(suggestions.isEmpty)
         XCTAssertFalse(suggestions.contains(answer))
+    }
+    
+    func testGettingCompletedChallengeInfoFromGuesses() {
+        // Given:
+        let viewModel = makeViewModel()
+        let answer = "one"
+        
+        // When:
+        _ = viewModel.prepare().toBlocking().materialize()
+        _ = viewModel.isAnswerCorrect(answer)
+        let info = viewModel.completedChallengeInfo
+        
+        // Then:
+        XCTAssertNotNil(info)
+        XCTAssertEqual(info!.numberOfGuesses, 1)
+        XCTAssertEqual(info!.name, "one")
+    }
+    
+    func testGettingCompletedChallengeInfoFromManager() {
+        // Given:
+        let viewModel = makeViewModel()
+        
+        // When:
+        let info = viewModel.completedChallengeInfo
+        
+        // Then:
+        XCTAssertNotNil(info)
+        XCTAssertEqual(info!.numberOfGuesses, 100)
+        XCTAssertEqual(info!.name, "three")
+    }
+    
+    func testGettingCompletedChallengeWhenNoGuessesOrSavedChallenges() {
+        // Given:
+        let viewModel = makeViewModel(returnErrors: true)
+        
+        // When:
+        let info = viewModel.completedChallengeInfo
+        
+        // Then:
+        XCTAssertNil(info)
     }
     
     
@@ -76,11 +116,13 @@ class ChallengeViewModelTests: XCTestCase {
     /// Default values from mocks:
     /// - challengeSecret: `Fake.Champions.one`
     /// - suggestions: `["test1", "test2"]`
-    private func makeViewModel() -> ChallengeViewModel {
+    private func makeViewModel(returnErrors: Bool = false) -> ChallengeViewModel {
         let getAllChampionsNamesUseCase = GetAllChampionsNamesUseCaseMock()
-        let repository = ChampionsRepositoryMock()
+        let getChampionUseCase = GetChampionUseCaseMock()
         let getChallengeSecretUseCase = GetChallengeSecretUseCaseMock()
+        let getChampionIconUseCase = GetChampionIconUseCaseMock()
+        let challengeCompletionManager = ChallengeCompletionManagerMock(returnErrors: returnErrors)
         
-        return ChallengeViewModel(challengeType: .champion, getAllChampionsNamesUseCase: getAllChampionsNamesUseCase, repository: repository, getChallengeSecretUseCase: getChallengeSecretUseCase)
+        return ChallengeViewModel(challengeType: .champion, getAllChampionsNamesUseCase: getAllChampionsNamesUseCase, getChampionUseCase: getChampionUseCase, getChallengeSecretUseCase: getChallengeSecretUseCase, getChampionIconUseCase: getChampionIconUseCase, challengeCompletionManager: challengeCompletionManager)
     }
 }

@@ -13,11 +13,11 @@ import RxSwift
 protocol ChampionsRepository {
     func saveChampions(_ champions: [Champion]) -> Completable
     func saveChampionIcon(url: URL, fileName: String) -> Completable
-    func getChampion(named name: String) -> Single<Champion?>
+    func getChampion(named name: String) -> Champion?
     func getAllChampions() -> Single<[Champion]>
     func getAllChampionsNames() -> Single<[String]>
     func getChampionsIconCount() -> Single<Int>
-    func getChampionIcon(id: Int) -> Single<UIImage?>
+    func getChampionIcon(id: Int?) throws -> UIImage?
 }
 
 extension PersistentStorageRepository: ChampionsRepository {
@@ -56,12 +56,8 @@ extension PersistentStorageRepository: ChampionsRepository {
         }
     }
     
-    func getChampion(named name: String) -> Single<Champion?> {
-        return Single.create { [weak self] single in
-            single(.success(self?.object(ofType: ChampionObject.self, forPrimaryKey: name)?.mapToDomain()))
-            
-            return Disposables.create()
-        }
+    func getChampion(named name: String) -> Champion? {
+        return object(ofType: ChampionObject.self, forPrimaryKey: name)?.mapToDomain()
     }
     
     func getAllChampions() -> Single<[Champion]> {
@@ -111,18 +107,10 @@ extension PersistentStorageRepository: ChampionsRepository {
         }
     }
     
-    func getChampionIcon(id: Int) -> Single<UIImage?> {
-        return Single.create { single in
-            let url = (DirectoryURLProvider().championIconsDirectory)!.appendingPathComponent("\(id).jpg")
-            do {
-                let data = try Data(contentsOf: url)
-                let image = UIImage(data: data)
-                single(.success(image))
-            } catch {
-                single(.failure(LoLdleError.cannotReadFile))
-            }
-            
-            return Disposables.create()
-        }
+    func getChampionIcon(id: Int?) throws -> UIImage? {
+        guard let id = id else { return nil }
+        let url = (DirectoryURLProvider().championIconsDirectory)!.appendingPathComponent("\(id).jpg")
+        let data = try Data(contentsOf: url)
+        return UIImage(data: data)
     }
 }
