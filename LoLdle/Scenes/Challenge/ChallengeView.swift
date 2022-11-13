@@ -151,7 +151,9 @@ final class ChallengeView: UIView {
     }
     
     func reloadTableView() {
-        tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        tableView.endUpdates()
     }
     
     // MARK: - Private
