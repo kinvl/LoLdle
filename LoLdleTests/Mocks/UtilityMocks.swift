@@ -10,7 +10,7 @@ import Foundation
 
 final class ChallengeCompletionManagerMock: ChallengeCompletionManaging {
     private let returnErrors: Bool
-    var todays10PM: Date = Date()
+    var resetDate: Date = Date()
     
     init(returnErrors: Bool) {
         self.returnErrors = returnErrors
