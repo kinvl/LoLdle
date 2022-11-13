@@ -51,7 +51,7 @@ final class DownloadChampionsDataUseCase: DownloadingChampionsDataUseCase {
         
         return service.downloadChampionsIcons(urls: iconsURLs)
             .subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .userInitiated))
-            .concat()
+            .merge()
             .flatMap { [weak self] iconInfo -> Completable in
                 guard let self = self else { return .error(LoLdleError.downloadFailed) }
                 

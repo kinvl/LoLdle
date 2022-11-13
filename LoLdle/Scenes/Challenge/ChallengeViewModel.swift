@@ -53,7 +53,7 @@ final class ChallengeViewModel: ChallengeViewModeling {
     }
     
     var resetDate: Date {
-        challengeCompletionManager.todays10PM
+        challengeCompletionManager.resetDate
     }
     
     // MARK: - Initialization

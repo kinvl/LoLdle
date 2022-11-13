@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ChallengeCompletionManaging {
-    var todays10PM: Date { get }
+    var resetDate: Date { get }
     func lastNumberOfGuesses(forChallenge type: ChallengeType) -> Int?
     func lastChampionName(forChallenge type: ChallengeType) -> String?
     func lastChampionId(forChallenge type: ChallengeType) -> Int?
@@ -24,17 +24,17 @@ final class ChallengeCompletionManager: ChallengeCompletionManaging {
         self.repository = repository
     }
     
-    var todays10PM: Date {
+    var resetDate: Date {
+        return Date() > todays10PM
+        ? Calendar.current.date(byAdding: .day, value: 1, to: todays10PM)!
+        : todays10PM
+    }
+    
+    private var todays10PM: Date {
         var components = getComponents(.year, .month, .day)
         components.hour = 22
         components.minute = 00
         return Calendar.current.date(from: components)!
-    }
-    
-    private var resetDate: Date {
-        return Date() > todays10PM
-        ? Calendar.current.date(byAdding: .day, value: 1, to: todays10PM)!
-        : todays10PM
     }
     
     private var yesterdayResetDate: Date {
