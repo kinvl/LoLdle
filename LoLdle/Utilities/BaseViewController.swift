@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 /** `BaseViewController` is a class that every `UIViewController` inherits from.*/
-class BaseViewController<T: UIView>: UIViewController {
+class BaseViewController<T: UIView>: UIViewController, UIGestureRecognizerDelegate {
     /** The view that the controller manages cast to the set generic type. */
     var castView: T {
         return view as! T
@@ -98,6 +98,12 @@ class BaseViewController<T: UIView>: UIViewController {
     private func addKeyboardDismissTapRecognizer() {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         recognizer.cancelsTouchesInView = false
+        recognizer.delegate = self
         view.addGestureRecognizer(recognizer)
+    }
+    
+    // MARK: - UIGestureRecognizerDelegate
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(touch.view is UIButton)
     }
 }
